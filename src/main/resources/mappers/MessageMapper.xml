@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : package + classname -->
+<mapper namespace="co.primeblock.mybatistest.dao.MessageDao"><!--namespace를 통해 MessageDao와 연결합니다. -->
+    
+    <select id="selectMessage" parameterType="string" resultType="co.primeblock.mybatistest.dto.MessageDto" >
+        select * 
+        from messages
+        where id = #{id}
+    </select>
+    
+    <select id="selectMessageAll" resultType="co.primeblock.mybatistest.dto.MessageDto">
+        select * 
+        from messages
+    </select>
+    
+    <!-- <insert id="insert" parameterType="messages">
+        insert into messages values(#{text});
+    </insert> -->
+    
+</mapper>
