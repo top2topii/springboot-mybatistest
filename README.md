@@ -4,10 +4,10 @@
 ```sql
 CREATE TABLE `message` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` varchar(14) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `createdDate` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 ```
 
 ## MySQL 데이터 타입과 Java 데이터 타입 비교/매칭

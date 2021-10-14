@@ -14,4 +14,11 @@ public class MessageDto {
     private int id;
     private String text;
     private Timestamp createdDate;
+
+    public MessageDto() {}
+
+    public MessageDto(String text) {
+        this.text = text;
+        this.createdDate = new Timestamp(System.currentTimeMillis());
+    }
 }

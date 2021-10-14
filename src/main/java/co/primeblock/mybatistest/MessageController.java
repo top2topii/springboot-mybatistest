@@ -1,11 +1,15 @@
 package co.primeblock.mybatistest;
 
+import java.security.Timestamp;
 import java.util.List;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.primeblock.mybatistest.dao.MessageDao;
@@ -29,5 +33,14 @@ public class MessageController {
 		// final MessageDto param = new MessageDto(id, null, new Date());
 		final List<MessageDto> messages = messageDao.selectMessageAll();
 		return messages;
+	}
+
+	@PostMapping("/message")
+	@ResponseBody
+	public String createMessage(@RequestBody MessageDto message) throws Exception {
+
+		MessageDto m = new MessageDto(message.getText());
+		messageDao.createMessage(m);
+		return "Success: " + Integer.toString(m.getId());
 	}
 }
