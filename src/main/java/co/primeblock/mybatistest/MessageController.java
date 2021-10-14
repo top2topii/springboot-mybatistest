@@ -23,4 +23,11 @@ public class MessageController {
 		final MessageDto message = messageDao.selectMessage(id);
 		return message;
 	}
+
+	@RequestMapping("/messages")
+	public List<MessageDto> messages() throws Exception { //query String으로 id를 받도록 설정
+		// final MessageDto param = new MessageDto(id, null, new Date());
+		final List<MessageDto> messages = messageDao.selectMessageAll();
+		return messages;
+	}
 }

@@ -1,6 +1,7 @@
 package co.primeblock.mybatistest.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+// import java.sql.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,5 +13,5 @@ import lombok.Setter;
 public class MessageDto {
     private int id;
     private String text;
-    private Date created_date;
+    private Timestamp createdDate;
 }

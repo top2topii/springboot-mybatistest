@@ -4,15 +4,15 @@
 <!-- namespace : package + classname -->
 <mapper namespace="co.primeblock.mybatistest.dao.MessageDao"><!--namespace를 통해 MessageDao와 연결합니다. -->
     
-    <select id="selectMessage" parameterType="string" resultType="co.primeblock.mybatistest.dto.MessageDto" >
+    <select id="selectMessage" parameterType="int" resultType="co.primeblock.mybatistest.dto.MessageDto" >
         select * 
-        from messages
+        from message
         where id = #{id}
     </select>
     
     <select id="selectMessageAll" resultType="co.primeblock.mybatistest.dto.MessageDto">
         select * 
-        from messages
+        from message
     </select>
     
     <!-- <insert id="insert" parameterType="messages">
