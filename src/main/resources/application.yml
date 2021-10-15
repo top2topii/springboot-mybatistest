@@ -11,6 +11,8 @@ spring:
     password: thd123
 
 # mybatis:
-#     type-aliases-package: co.primeblock
+    # type-aliases-package: co.primeblock.mybatistest.dto.MessageDto
+    # config-location: 
+    #   - classpath:mybatis-config.xml
 #     mapper-locations:
 #     - classpath:/mapper/**/*.xml

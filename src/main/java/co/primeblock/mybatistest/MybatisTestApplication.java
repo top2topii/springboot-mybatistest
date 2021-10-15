@@ -21,7 +21,9 @@ public class MybatisTestApplication {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
 		
+		Resource configLocation = new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
 		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*Mapper.xml");
+		sessionFactory.setConfigLocation(configLocation);
 		sessionFactory.setMapperLocations(res);
 		
 		return sessionFactory.getObject();

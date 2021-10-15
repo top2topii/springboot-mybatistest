@@ -4,18 +4,18 @@
 <!-- namespace : package + classname -->
 <mapper namespace="co.primeblock.mybatistest.dao.MessageDao"><!--namespace를 통해 MessageDao와 연결합니다. -->
     
-    <select id="selectMessage" parameterType="int" resultType="co.primeblock.mybatistest.dto.MessageDto" >
+    <select id="selectMessage" parameterType="int" resultType="MessageDto" >
         SELECT * 
         FROM message
         WHERE id = #{id}
     </select>
     
-    <select id="selectMessageAll" resultType="co.primeblock.mybatistest.dto.MessageDto">
+    <select id="selectMessageAll" resultType="MessageDto">
         SELECT * 
         FROM message
     </select>
     
-    <insert id="createMessage" parameterType="co.primeblock.mybatistest.dto.MessageDto" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="createMessage" parameterType="MessageDto" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         INSERT INTO message (text, createdDate)
         VALUES (#{text}, #{createdDate}) 
     </insert>
